@@ -1,31 +1,62 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
 import CanvasLoader from "../Loader";
 
+// Function to sanitize geometry to remove NaN values
+const sanitizeGeometry = (geometry) => {
+  if (!geometry || !geometry.attributes.position) return;
+
+  const posAttr = geometry.attributes.position;
+  const arr = posAttr.array;
+
+  // Check for NaN values in the position attribute and replace them
+  for (let i = 0; i < arr.length; i++) {
+    if (isNaN(arr[i])) {
+      console.warn(`NaN detected at index ${i}. Replacing with 0.`);
+      arr[i] = 0; // Replace NaN with 0
+    }
+  }
+
+  // Update the geometry after fixing
+  posAttr.needsUpdate = true;
+};
+
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const { scene } = useGLTF("/desktop_pc/scene.gltf");
+
+  useEffect(() => {
+    if (!scene) return;
+
+    // Traverse through all meshes in the scene and sanitize the geometry
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        sanitizeGeometry(child.geometry);
+      }
+    });
+  }, [scene]);
 
   return (
-    <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <pointLight intensity={1} />
-      <primitive
-        object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
-      />
-    </mesh>
+    !isMobile && ( // Conditionally render the model based on isMobile
+      <mesh>
+        <hemisphereLight intensity={0.15} groundColor="black" />
+        <spotLight
+          position={[-20, 50, 10]}
+          angle={0.12}
+          penumbra={1}
+          intensity={1}
+          castShadow
+          shadow-mapSize={1024}
+        />
+        <pointLight intensity={1} />
+        <primitive
+          object={scene}
+          scale={isMobile ? 0.7 : 0.75}
+          position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+          rotation={[-0.01, -0.2, -0.1]}
+        />
+      </mesh>
+    )
   );
 };
 
@@ -54,24 +85,26 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <Canvas
-      frameloop='demand'
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} />
-      </Suspense>
+    !isMobile && ( // Hide the entire Canvas if in mobile view
+      <Canvas
+        frameloop="demand"
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers isMobile={isMobile} />
+        </Suspense>
 
-      <Preload all />
-    </Canvas>
+        <Preload all />
+      </Canvas>
+    )
   );
 };
 
