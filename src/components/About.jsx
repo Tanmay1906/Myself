@@ -47,11 +47,9 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        I’m Tanmay Verma, a passionate cybersecurity enthusiast, ethical hacker, and web developer specializing in blockchain technology, MERN stack, and AI-driven security solutions. I thrive on building secure, innovative, and high-performance applications that merge cybersecurity, AI, and blockchain to create cutting-edge solutions.
+
+        With expertise in Python, Rust, Solidity, and cybersecurity tools, I focus on developing secure digital infrastructures and interactive web experiences. My work reflects a fusion of technical expertise, problem-solving, and creativity, ensuring impactful and future-ready solutions. 
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

@@ -42,20 +42,16 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Web Development",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Blockchain",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Cyber Security",
     icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
   },
 ];
 
@@ -116,55 +112,36 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: " Cyber Security & Ethical Hacking",
+    company_name: "Coincent",
+    icon: tesla,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Feb 2024 - April 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Designed and developed web applications leveraging HTML, CSS, and JavaScript, effectively creating interactive and user-friendly interfaces while demonstrating strong proficiency in front-end technologies to meet client specifications and improve overall user engagement.",
+      "Created a responsive and efficient HTML layout for a Netflix landing page, utilizing best practices in web design and development to optimize user experience across various devices, thereby showcasing strong design sensibilities and coding skills.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    title: "Web Developer Intern",
+    company_name: "TOPPER WORLD",
+    icon: starbucks,
+    iconBg: "#383E56",
+    date: "Feb 2024 - March 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Designed and developed web applications leveraging HTML, CSS, and JavaScript, effectively creating interactive and user-friendly interfaces while demonstrating strong proficiency in front-end technologies to meet client specifications and improve overall user engagement.",
+      "Created a responsive and efficient HTML layout for a Netflix landing page, utilizing best practices in web design and development to optimize user experience across various devices, thereby showcasing strong design sensibilities and coding skills.",
     ],
   },
   {
     title: "Web Developer",
-    company_name: "Shopify",
+    company_name: "Zidio Development",
     icon: shopify,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Oct 2024 - Dec 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      " Developed a fully responsive website for Zidio Development Company using the MERN stack, implementing modern web development practices that improved user experience, functionality, and performance, while collaborating with cross-functional teams to deliver high-quality results.",
+      "Created a full-stack web-based task manager, demonstrating expertise in end-to-end application development",
     ],
   },
 ];
@@ -198,16 +175,16 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Url - Shortener",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A powerful tool for creating shortened URLs with advanced tracking features, including click counts, device analytics, and geographical insights. Generate user-friendly QR codes for seamless sharing and enhanced accessibility.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Javascript",
         color: "green-text-gradient",
       },
       {
@@ -219,9 +196,9 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "Shoe Company",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Created a responsive and efficient HTML layout for a Shoe Company landing page, utilizing best practices in web design and development to optimize user experience across various devices, thereby showcasing strong design sensibilities and coding skills.",
     tags: [
       {
         name: "react",
@@ -242,7 +219,7 @@ const projects = [
   {
     name: "Trip Guide",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, while offering curated recommendations for popular destinations to enhance their travel experience.",
     tags: [
       {
         name: "nextjs",

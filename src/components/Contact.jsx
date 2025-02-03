@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { FaTwitter, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -121,6 +122,18 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
+
+        <div className='mt-8 flex justify-center space-x-4'>
+          <a href='mailto:vermatanmay87@gmail.com' target='_blank' rel='noopener noreferrer'>
+            <FaEnvelope className='text-white text-2xl' />
+          </a>
+          <a href='https://linkedin.com/in/tanmayverma190605' target='_blank' rel='noopener noreferrer'>
+            <FaLinkedin className='text-white text-2xl' />
+          </a>
+          <a href='https://github.com/tanmay1906' target='_blank' rel='noopener noreferrer'>
+            <FaGithub className='text-white text-2xl' />
+          </a>
+        </div>
       </motion.div>
 
       <motion.div
