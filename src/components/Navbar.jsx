@@ -40,69 +40,69 @@ const Navbar = () => {
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
-          }}
-        >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+            }}
+          >
+            <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
+            <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Tanmay Verma &nbsp;
             <span className='sm:block hidden'> | Portfolio</span>
-          </p>
-        </Link>
+            </p>
+          </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
-          {navLinks.map((nav, index) => (
+          <ul className='list-none hidden sm:flex flex-row gap-10'>
+            {navLinks.map((nav, index) => (
             <React.Fragment key={nav.id}>
               {index === Math.floor(navLinks.length / 2) && (
-                <li
-                  className='text-secondary hover:text-white text-[18px] font-medium cursor-pointer'
-                >
-                  <a href='/src/assets/Resume(Tanmay Verma).pdf' target='_blank' rel='noopener noreferrer'>
-                    Resume
-                  </a>
-                </li>
+              <li
+                className='text-secondary hover:text-white text-[18px] font-medium cursor-pointer'
+              >
+                <a href='https://drive.google.com/file/d/your-google-drive-file-id/view' target='_blank' rel='noopener noreferrer'>
+                Resume
+                </a>
+              </li>
               )}
               <li
-                className={`${
-                  active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer`}
-                onClick={() => setActive(nav.title)}
+              className={`${
+                active === nav.title ? "text-white" : "text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => setActive(nav.title)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             </React.Fragment>
-          ))}
-        </ul>
+            ))}
+          </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
-          <img
+          <div className='sm:hidden flex flex-1 justify-end items-center'>
+            <img
             src={toggle ? close : menu}
             alt='menu'
             className='w-[28px] h-[28px] object-contain'
             onClick={() => setToggle(!toggle)}
-          />
+            />
 
-          <div
+            <div
             className={`${
               !toggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-          >
+            >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav, index) => (
-                <React.Fragment key={nav.id}>
-                  {index === Math.floor(navLinks.length / 2) && (
-                    <li
-                      className='font-poppins font-medium cursor-pointer text-[16px] text-secondary'
-                    >
-                      <a href='/src/assets/Resume(Tanmay Verma).pdf' target='_blank' rel='noopener noreferrer'>
-                        Resume
-                      </a>
-                    </li>
-                  )}
-                  <li
-                    className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                      active === nav.title ? "text-white" : "text-secondary"
-                    }`}
-                    onClick={() => {
+              <React.Fragment key={nav.id}>
+                {index === Math.floor(navLinks.length / 2) && (
+                <li
+                  className='font-poppins font-medium cursor-pointer text-[16px] text-secondary'
+                >
+                  <a href='https://drive.google.com/file/d/1rUA2gxfb4Gm1x_fG0ekWJvd82F6-6rZx/view?usp=sharing' target='_blank' rel='noopener noreferrer'>
+                  Resume
+                  </a>
+                </li>
+                )}
+                <li
+                className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                  active === nav.title ? "text-white" : "text-secondary"
+                }`}
+                onClick={() => {
                       setToggle(!toggle);
                       setActive(nav.title);
                     }}
